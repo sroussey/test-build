@@ -1,9 +1,9 @@
 import React from "react";
 
-const TestDetailPage:React.FC<{params:{id:string}}> = ({params:{id}}) => {
-    console.error({id});
+const TestDetailPage:React.FC<{params:{id:string}}> = (args) => {
+    console.error(args);
     return (
-        <div>ID is {id}</div>
+        <div>ID is {args.params.id}</div>
     )
 }
 
