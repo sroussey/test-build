@@ -1,16 +1,12 @@
 import Link from "next/link";
 import React from "react";
+import { generateStaticParams } from "./[id]/page";
 
-
-export const generateStaticParams = async () => {
-    return ['test','apple', 'orange'];
-  };
-  
 const AppIndexPage = async () => {
-  const ids = await generateStaticParams();
+  const ids =  generateStaticParams();
     return (
         <div>
-          {ids.map(id=><div key={id}><Link href={`/app/${id}`}>{id}</Link></div>)}
+          {ids.map(item => <div key={item.id}><Link href={`/app/${item.id}`}>{item.id}</Link></div>)}
         </div>
     )
 }
